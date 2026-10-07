@@ -162,7 +162,7 @@ Kalshi fees are saved as the API's `fee_type` and `fee_multiplier`. Polymarket s
 
 ## Current limitations
 
-- Kalshi discovery covers `KXATPMATCH` and `KXATPCHALLENGERMATCH` and follows pagination. Polymarket uses its sports `16` endpoint, filters `tennis_match_winner`, and currently fetches only the first **50 events**.
+- Kalshi discovery covers `KXATPMATCH` and `KXATPCHALLENGERMATCH` and follows pagination. Polymarket uses its sports `16` endpoint, filters `tennis_match_winner`.
 - Discovery includes available upcoming matches as well as matches already underway. An open market does not establish that a match is live.
 - The two collectors have different discovery coverage and record formats. Cross-exchange match mapping is not implemented.
 - Reconnection restores current books but does not backfill updates missed during an outage.
