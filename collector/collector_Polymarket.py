@@ -236,17 +236,22 @@ def on_message(ws, message):
 
 def check_updates():
     updated_slugs = set()
+    events = []
 
-    response = requests.get(
-        url,
-        params={"limit": 50, "offset": 0},
-        timeout=10,
-    )
-    response.raise_for_status()
+    while True:
+        response = requests.get(
+            url,
+            params={"limit": 50, "offset": len(events)},
+            timeout=10,
+        )
+        response.raise_for_status()
 
-    data = response.json()
+        data = response.json()
+        events.extend(data["events"])
+        if len(data["events"]) < 50:
+            break
 
-    for event in data["events"]:
+    for event in events:
         if not event.get("ended", False):
             for market in event.get("markets", []):
                 if (
