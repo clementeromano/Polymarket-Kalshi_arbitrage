@@ -1,0 +1,4 @@
+requests==2.34.2
+websocket-client==1.9.2
+python-dotenv==1.2.3
+cryptography==50.0.1

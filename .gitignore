@@ -218,3 +218,19 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Collected datasets and private credentials
+/data/
+.env.*
+!.env.example
+Kalshi_key.txt
+*.pem
+*.key
+secrets/
+
+# Local collector backups and logs
+backups/
+*.bak
+*.before_*.py
+*.before.py
+*.log
